@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>여기가 THROW</h1>
+<form action="{% url "articles:catch" %}">
+  <label for="input">throw!!</label>
+  <input type="text" id='input' name='throw'>
+  <input type="submit" value="쏘세요!!">
+</form>
+{% endblock content %}

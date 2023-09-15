@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <p class="h1">여기는 Articles</p>
+    <a href="{% url "articles:page1" %}">page1로 이동</a>  
+    <a href="{% url "articles:page2" %}">page2로 이동</a>
+  </div>
+{% endblock content %}

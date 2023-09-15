@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My room</title>
+  <!-- 1.1 구글 폰트 적용 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=fire-animation">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=neon">
+  
+  <!-- 1. bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+  </head>
+
+<body>
+  <!-- 2. 메뉴 -->
+  <header>
+    <nav class="navbar navbar-expand-md bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid d-flex justify-content-between">
+        <div>
+          <img src="images/developer.jpg" alt="developer" class="d-inline-block m-2 col-3 logo">
+        </div>
+        <a class="text-white fw-bold" href="">나는 윤정영이다</a>
+        <div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto m-0 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#intro">Intro</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#skills">Skills</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 3. 메인 -->
+  <main class="frontpage text-white"> 
+    <p class="text-white fw-bold fs-3 m-0">DON'T WORRY IF IT DOESN'T WORK RIGHT.</p>
+    <p class="text-white fw-bold fs-3 m-0 mb-4">IF EVERYTHING DID, YOU'D BE OUT OF A JOB.</p>
+    <p class="text-white fw-bold fs-5 mt-4 mb-0">올바르게 작동하지 않는다고 걱정하지 마라.</p>
+    <p class="text-white fw-bold fs-5 m-0">만일 모든 게 잘 된다면 굳이 당신이 일할 이유가 없다.</p>
+  </main>  
+
+  <!-- 3. 자기소개 -->
+  <section class="intro" id="intro">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-10 col-sm-6 col-md-5 col-lg-4 m-auto pb-5 pb-md-0">
+          <img class="img-fluid rounded-circle my-5" alt="image" src="images/me.PNG">
+          <h6 class="lead">Email : dbswjddud100@naver.com</h6>
+          <h6 class="lead mb-5">Call : 010 - 9288 - 6817</h6>
+        </div>
+
+        <div class="col-10 ml-md-auto col-md-6 pb-5 pb-md-0">
+          <h1 class="font-effect-shadow-multiple mb-3">Jeongyoung Yoon</h1>
+          <p class="lead fw-bold mb-5">Web Developer</p>
+          <h4 class="lead"> - Birth ( 1996.09.08 ~ )</h4>
+          <h4 class="lead"> - Kyungpook National University Electronics</h4>
+          <h4 class="lead font-effect-fire-animation"> - SSAFY 10th ( 2023.07.06 ~ )</h4>
+          <a class="text-decoration-none" href="https://solved.ac/profile/wjddud1004"><h4 class="lead text-white font-effect-fire-animation"> - Backjun Silver-4</h4></a>
+          <h4 class="lead"> - League of legend Unlanked</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 기술 스택 -->
+  <section class="skills" id="skills">  
+    <h1 class="text-black fw-bold mb-1" >SKILLS</h1>
+    <div class="container">
+      <div class="row gy-1">
+        <div class="d-flex justify-content-between mt-5 flex-wrap ">
+          <div class="text bg-body rounded-5 text-center col-12 col-xl-6 mb-5 mb-xl-0">
+            <h3 class="text-orange fw-bold mt-3">Frontend</h3>
+            <hr>
+            <img src="images/front.png" alt="front">
+          </div>
+
+          <div class="text bg-body rounded-5 text-center col-12 col-xl-5 mt-5 mt-xl-0">
+            <h3 class="text-orange fw-bold mt-3">Backend</h3>
+            <hr>
+            <img class="" src="images/back.PNG" alt="back">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 5. 꼬리말 -->
+  <footer class="footer font-effect-neon" id="footer"> 풀스택을 목표로!  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

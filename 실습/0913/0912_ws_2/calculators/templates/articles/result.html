@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>계산 결과</h1>
+  <h3>{{num1}}+{{num2}} = {{num1|add:num2}} </h3>
+  <h3>{{num1}}*{{num2}} = {{mul}} </h3>
+  <h3>{{num1}}-{{num2}} = {{minus}} </h3>
+  {% if num2 != 0 %}
+    <h3>{{num1}}/{{num2}} = {{div}} </h3>
+  {% else %}
+    <h3>계산할 수 없습니다</h3>
+  {% endif %}
+</body>
+</html>

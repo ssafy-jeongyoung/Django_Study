@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>백엔드 과정 수료증</h1>
+<h4>이름 : {{name}} </h4>
+<h4>나이 : {{age|random}} </h4>
+<h4>등급 : {{grade|random|upper}} </h4>
+{% endblock content %}

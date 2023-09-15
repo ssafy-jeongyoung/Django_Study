@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="h1 m-3 fw-bold">주문해주세요!</h1>
+<hr>
+<ul>
+  {% for d in drink %}
+   <p>{{d|title}} </p>
+  {% endfor %}
+</ul>
+<div>
+  <form action="/receipt/" method ="GET">
+    <label for="drink">주문란 :</label>
+    <input type="text" name="food" id='drink'>
+    <input type="submit" value='주문하기'>
+  </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,57 @@
+*{
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.logo{
+  width: 60px;
+  height: 60px;
+}
+
+.frontpage{
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(images/gogo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+}
+.intro {
+  background-color: ghostwhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.skills{
+  height: 900px;
+  background-color: orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer{
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav{
+  position: fixed;
+  top: 0;
+}
+
+@media screen and (max-width:) {
+  
+}

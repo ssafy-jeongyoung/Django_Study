@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div p {
+      color: blue;
+      margin-left: 40px;
+    }
+
+    div > p {
+      color: crimson;
+      margin: initial;
+    }
+  </style>
+</head>
+<body>
+    <div>
+        <p>자식</p>  
+    </div>
+    <div>
+        <label>
+            <p>손자</p>  
+        </label>
+    </div>
+    <div>
+        <p>자식</p>  
+    </div>
+</body>
+</html>
+
+
+<!-- 자손 결합자와 자식 결합자의 차이는? -->
+<!-- 자손 결합자는 아래에 있는 모든 요소를 선택 
+     반면에 자식 결합자는 한단계 아래의 자식 요소만을 선택함-->
