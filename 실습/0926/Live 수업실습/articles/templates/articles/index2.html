@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% comment %} 게시글 작성 {% endcomment %}
+{% comment %} 게시글 목록 {% endcomment %}
+{% comment %} 게시글 삭제 {% endcomment %}
+<div>
+  <h1>인덱스인데 니가 뭘 할 수 있는데</h1>
+  <a href="{% url "articles:new" %}">새 글 쓰기</a>
+  {% comment %} 게시글 목록 출력 {% endcomment %}
+  {% for article in articles %}
+  <p>
+    <p>제목 : {{ article.title }} </p>
+    <p>내용 : {{ article.content }}</p>
+    <p>작성 시간 : {{ article.created_at }} </p>
+    <form action="{% url "articles:delete" article.pk %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value='삭제'>
+    </form>
+    <hr>
+  </p>
+  <div>
+    <a href="{% url "articles:edit" article.pk %}">수정</a>
+  </div>
+  {% endfor %}
+
+</div>
+{% endblock content %}

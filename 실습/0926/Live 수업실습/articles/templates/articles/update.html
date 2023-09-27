@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div>
+    <h1>수정화면</h1>
+    <form action="">
+      <p>
+        <label for="title">제목 : </label>
+        <input type="text" id="title" name="title" value="{{article.title}}">
+      </p>
+      <p>
+        <label for="content">내용 : </label>
+        <textarea name="content" id="content" cols="30" rows="10">{{article.content}}</textarea>
+      </p>
+      <p>
+        <input type="submit" value="수정하기">
+      </p>
+    </form>
+  </div>
+
+{% endblock content %}
