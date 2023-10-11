@@ -1,0 +1,23 @@
+CREATE TABLE contacts (
+  PK INTEGER PRIMARY KEY AUTOINCREMENT,
+  email TEXT NOT NULL UNIQUE,
+  name TEXT NOT NULL,
+  age INTEGER NOT NULL
+);
+
+CREATE TABLE users (
+  PK INTEGER PRIMARY KEY AUTOINCREMENT,
+  email TEXT NOT NULL UNIQUE,
+  name TEXT NOT NULL,
+  age INTEGER NOT NULL,
+  phoneNumber TEXT NOT NULL,
+  gender INTEGER,
+  address TEXT NOT NULL DEFAULT 'no address'
+);
+
+ALTER TABLE
+  users
+RENAME COLUMN
+  phoneNumber TO number;
+
+DROP TABLE users;
