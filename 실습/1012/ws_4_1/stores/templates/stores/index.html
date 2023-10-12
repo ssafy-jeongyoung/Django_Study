@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>전체 편의점 목록</h1>
+
+{% for store in stores %}
+  <div>
+    <a href="{% url "stores:detail" store.pk %}">점장 : {{ store.user }}</a>
+  </div>
+  <div>
+    <a href="{% url "stores:detail" store.pk %}">주소 : {{ store.address }}</a>
+  </div>
+  <hr>
+{% endfor %}
+
+{% endblock content %}
