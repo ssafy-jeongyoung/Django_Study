@@ -1,15 +1,16 @@
 import sys
+from collections import deque
 
 
 def solve(row):
-    queue = [row]
+    dq = deque([row])
     visited[row] = 1
     cnt = 1
-    while queue:
-        cr = queue.pop(0)
+    while dq:
+        cr = dq.popleft()
         for k in range(1, N+1):
             if not visited[k] and k in computer[cr]:
-                queue.append(k)
+                dq.append(k)
                 visited[k] = 1
                 cnt += 1
     return cnt, row

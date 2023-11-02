@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .done {
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <form action="/todos/">
+    <input type="text" id="input">
+    <button>Todo</button>
+  </form>
+  <ul id="ul"></ul>
+
+<script>
+  const form = document.querySelector('form')
+
+  function addTodo (event) {
+    // 이벤트를 취소한다.
+    event.preventDefault()
+
+    // 입력 element를 찾고 해당 입력 element의 value 값을 저장한다.
+    const inputTag = document.querySelector('#input')
+    const inputValue = inputTag.value
+    // li element를 생성 후 input element의 value 값을 데이터로 저장한다
+    const liTag = document.createElement('li')
+    liTag.textContent = inputValue
+
+    // ul 태그의 자식 태그로 위에서 생성한 li element를 넣는다.
+    const ulTag = document.querySelector('#ul')
+    ulTag.appendChild(liTag)
+
+    // 삭제 버튼 추가
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'X'
+    liTag.appendChild(deleteButton)
+
+    // 삭제 버튼을 클릭하면 해당 li element를 삭제
+    deleteButton.addEventListener('click', function () {
+      ulTag.removeChild(liTag)
+    })
+
+    // li element를 클릭하면 취소선이 토글됨
+    liTag.addEventListener('click', function () {
+      liTag.classList.toggle('done')
+    })
+
+  }
+
+  form.addEventListener('submit', addTodo)
+</script>
+</body>
+</html>
