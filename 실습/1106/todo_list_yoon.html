@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .completed{
+      text-decoration: line-through;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>오늘의 할 일</h1>
+    <select name="" id="" v-model="selectedOption">
+      <option value="" disabled>선택하세요</option>
+      <option value="all" >전체</option>
+      <option value="clear" >완료</option>
+      <option value="noclear" >미완료</option>
+    </select>
+    <input type="text" v-model="inputText"> 
+    <button @click="addTodo">추가</button>
+    <ul>
+      <li v-for="todo in filteredTodos" 
+      :key="todo.id" 
+      :class="{completed:todo.isCompleted}"
+      @click="changeStatus(todo)">
+        {{ todo.content }} <button @click="removeTodo(todo.id)">X</button>
+      </li>
+    </ul>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref, computed } = Vue
+    const inputText = ref('')
+    const app = createApp({
+      setup(){
+        // content, id, isCompleted
+        let id = 0
+        
+        const isClear = ref(false)
+        const todos = ref([
+          {
+            id : id++,
+            content : 'test1' ,
+            isCompleted : false
+          },
+          {
+            id : id++,
+            content : 'test2' ,
+            isCompleted : true
+          },
+          {
+            id : id++,
+            content : 'test3' ,
+            isCompleted : true
+          }
+        ])
+        const changeStatus = function(todo){
+          todo.isCompleted = !todo.isCompleted
+        }
+        const removeTodo = function(targetId){
+          // filter 이용하면 만들수 있습니다. 
+          // Array Helper method : 
+          // 각 요소에 대해서 콜백함수가 true인 요소만 모아서 새로운 리스트를 반환하는 함수
+          todos.value = todos.value.filter((todo)=>{
+            //지우려는 요소가 아니면 true 반환
+            //지우려는 요소라면 false 반환
+            return todo.id != targetId
+          })
+
+        }
+        // 함수가 실행이 되면, 
+        const addTodo = function(){
+          //객체(할일) 만들고
+          const newTodo = {
+            id : id++,
+            content : inputText.value,
+            isCompleted : false,
+          }
+          //방금 만든 할 일을 목록에 추가
+          todos.value.push(newTodo)
+          //입력창 초기화
+          inputText.value = ''
+        }
+
+        const selectedOption = ref('')
+
+        const filteredTodos = computed(() => {
+          if (selectedOption.value === 'clear') {
+            return todos.value.filter((todo) => todo.isCompleted)
+          } else if (selectedOption.value === 'noclear') {
+            return todos.value.filter((todo) => !todo.isCompleted)
+          } else {
+            return todos.value
+          }
+        })
+
+        return {
+          todos,
+          inputText,
+          addTodo,
+          removeTodo,
+          changeStatus,
+          filteredTodos,
+          selectedOption,
+        }
+      }
+    })
+    app.mount('#app')
+  </script>
+</body>
+</html>
