@@ -6,7 +6,7 @@
     </div>
     <div class="d-flex flex-column align-items-center justify-content-center mt-5">
       <div class="row justify-content-center">
-        <div class="col-10" v-for="quiz in Quizs" :key="quiz.pk">
+        <div class="col-10" v-for="quiz in sortQuiz" :key="quiz.pk">
           <QuizDetail 
           :quiz="quiz" />
         </div>
@@ -18,7 +18,7 @@
 <script setup>
   import QuizDetail from '@/components/QuizDetail.vue';
   import QuizCreate from '@/components/QuizCreate.vue';
-  import { ref } from 'vue'
+  import { computed, ref } from 'vue'
   
   const Quizs = ref([
     {pk: 1, question:'Python 웹 프레임워크 중 하나로, 마이크로 웹 프레임워크로 빠른 개발을 지원하는 것은?', answer: 'flask'},
@@ -33,10 +33,12 @@
     newQuiz = newProblem
     newQuiz.pk = Quizs.value.length + 1
     // console.log(newQuiz)
-    Quizs.value.unshift(newQuiz)
+    Quizs.value.push(newQuiz)
   }
-
-  Quizs.value.sort((a, b) => b.pk - a.pk)
+  const sortQuiz = computed(() => {
+    return [...Quizs.value].sort((a, b) => b.pk - a.pk)
+  })
+  
 </script>
 
 <style scoped>
